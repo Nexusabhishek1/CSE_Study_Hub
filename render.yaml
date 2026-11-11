@@ -3,7 +3,7 @@ services:
     name: cse-study-hub
     runtime: static
     buildCommand: npm ci && npm run build
-    staticPublishPath: ./frontend/dist
+    staticPublishPath: ./dist
     routes:
       - type: rewrite
         source: /*

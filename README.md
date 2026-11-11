@@ -20,18 +20,18 @@ A React + Vite + Tailwind semester study workspace for seven B.Tech CSE subjects
 
 ## Deploy
 
-This is currently a frontend-only static site. Both providers build the app with `npm run build` from the repository root and serve `frontend/dist/`. SPA fallback rewrites are configured for direct URL visits.
+This is currently a frontend-only static site. Both providers build the app with `npm run build` from the repository root and serve `dist/`. SPA fallback rewrites are configured for direct URL visits.
 
 ### Vercel
 
 1. Import the project folder/repository in Vercel.
 2. Keep the project root at the folder containing `package.json` and `vercel.json`.
-3. Vercel reads `vercel.json` to build the app and publish `frontend/dist/`.
+3. Keep the Root Directory set to the repository root (`./`) and the Output Directory set to `dist`. Vercel reads `vercel.json` to build and publish the site.
 
 ### Render
 
 1. Create a **Blueprint** from the project folder/repository.
-2. Render reads `render.yaml` to create a static site and publish `frontend/dist/`.
+2. Leave Root Directory blank. Render reads `render.yaml` to create a static site and publish `dist/`.
 
 No environment variables or backend service are required for the current browser-only app.
 

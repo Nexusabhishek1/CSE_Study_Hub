@@ -11,6 +11,23 @@ A React + Vite + Tailwind semester study workspace for seven B.Tech CSE subjects
 5. Run `npm run dev`
 6. Open the local URL printed by Vite (usually http://localhost:5173).
 
+## Deploy
+
+This is a static Vite site. Both providers build the app with `npm run build` and serve the generated `dist/` folder. SPA fallback rewrites are configured for direct URL visits.
+
+### Vercel
+
+1. Import the project folder/repository in Vercel.
+2. Keep the project root at the folder containing `package.json` and `vercel.json`.
+3. Vercel reads `vercel.json` to build the app and publish `dist/`.
+
+### Render
+
+1. Create a **Blueprint** from the project folder/repository.
+2. Render reads `render.yaml` to create a static site and publish `dist/`.
+
+No environment variables or backend service are required for the current browser-only app.
+
 ## How to study
 
 1. Choose a subject from the sidebar or dashboard.

@@ -10,8 +10,8 @@ from reportlab.lib.colors import HexColor
 from pathlib import Path
 import re, html
 
-ROOT=Path(__file__).parent
-OUT=ROOT/'public'/'resources'/'unit-notes'
+ROOT=Path(__file__).parent.parent
+OUT=ROOT/'frontend'/'public'/'resources'/'unit-notes'
 OUT.mkdir(parents=True,exist_ok=True)
 
 # The topic lists mirror the syllabus outlines currently held in the study hub.

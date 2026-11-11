@@ -2,6 +2,13 @@
 
 A React + Vite + Tailwind semester study workspace for seven B.Tech CSE subjects.
 
+## Project structure
+
+- `frontend/` contains the React + Vite app and its static resources.
+- `backend/` is reserved for a future API; the current app has no server-side features.
+- `scripts/` contains project maintenance scripts, including the unit-notes PDF generator.
+- The root `package.json` manages the frontend as an npm workspace so deployment services can build from the repository root.
+
 ## Run locally
 
 1. Install Node.js LTS.
@@ -13,18 +20,18 @@ A React + Vite + Tailwind semester study workspace for seven B.Tech CSE subjects
 
 ## Deploy
 
-This is a static Vite site. Both providers build the app with `npm run build` and serve the generated `dist/` folder. SPA fallback rewrites are configured for direct URL visits.
+This is currently a frontend-only static site. Both providers build the app with `npm run build` from the repository root and serve `frontend/dist/`. SPA fallback rewrites are configured for direct URL visits.
 
 ### Vercel
 
 1. Import the project folder/repository in Vercel.
 2. Keep the project root at the folder containing `package.json` and `vercel.json`.
-3. Vercel reads `vercel.json` to build the app and publish `dist/`.
+3. Vercel reads `vercel.json` to build the app and publish `frontend/dist/`.
 
 ### Render
 
 1. Create a **Blueprint** from the project folder/repository.
-2. Render reads `render.yaml` to create a static site and publish `dist/`.
+2. Render reads `render.yaml` to create a static site and publish `frontend/dist/`.
 
 No environment variables or backend service are required for the current browser-only app.
 
@@ -50,7 +57,7 @@ The topic guides are concise study explanations organised around the captured sy
 
 ## Detailed unit-wise PDF notes
 
-- The `public/resources/unit-notes/` folder contains **45 separate PDFs**.
+- The `frontend/public/resources/unit-notes/` folder contains **45 separate PDFs**. To regenerate them, run `python scripts/build_unit_pdfs.py` from the repository root.
 - Every unit PDF is exactly **5 pages** and includes syllabus coverage, concise explanations, an application framework, revision points and exam-style self-test questions.
 - In the website, open a subject, choose a unit, select **Study Notes**, and click **Download 5-page PDF notes**.
 - Communication Skills is split into two tracks: Aptitude and Communication.
@@ -59,6 +66,6 @@ The topic guides are concise study explanations organised around the captured sy
 ## DCN notes update (11 Nov 2026)
 
 - Units 1–5 now have five-page PDF notes prepared using the uploaded handwritten class-note PDFs as the primary reference.
-- The original uploaded class-note PDFs are included under `public/resources/dcn-class-reference/` and linked from the DCN resource list.
+- The original uploaded class-note PDFs are included under `frontend/public/resources/dcn-class-reference/` and linked from the DCN resource list.
 - The DCN Unit 6 guide remains based on the existing syllabus outline only because no Unit 6 class-note PDF was supplied.
 - To open the notes: select Data Communication & Networking → choose Unit 1–5 → Study Notes → Download 5-page PDF notes.
